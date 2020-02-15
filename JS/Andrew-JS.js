@@ -48,17 +48,24 @@ function rollDie(n) {
 // console.log(rollDie());
 // Make a function called listOfRollsFromDieFunc(numberOfRolls, diceFunction)
 
-function listOfRollsFromDieFunc(numberOfRolls, diceFunction) {
+function listOfRollsFromDieFunc(numberOfRolls, input) {
         var diceArray = [];
         for (var i = 0; i < numberOfRolls; i++) {
-                diceArray.push();
+                diceArray.push(input);
                 console.log(diceArray[i]);
         }
         return diceArray
 }
+console.log(listOfRollsFromDieFunc(5, twelveSidedDie()));
 
-console.log(listOfRollsFromDieFunc(4, twelveSidedDie));
 
+
+
+
+
+// kamea.colors.forEach(function (color) {
+//     console.log("Your Dice roll is" +   )
+// });
 
 // This function should take in two arguments:
 
