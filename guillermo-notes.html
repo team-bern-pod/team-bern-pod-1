@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    // challenge 1 pulled from Codewars -- https://www.codewars.com/kata/558fc85d8fd1938afb000014/train/javascript
+
+    function sumTwoSmallestNumbers(numbers) {
+        sortedArray = numbers.sort(function(a,b){return a-b});
+        sum = sortedArray[0] + sortedArray[1];
+        return console.log(sum);
+    }
+
+//    calling the function and passing arguments for testing.
+
+    sumTwoSmallestNumbers([5, 8, 12, 19, 22]); //, 13 , "Sum should be 13");
+    sumTwoSmallestNumbers([15, 28, 4, 2, 43]); // 6 , "Sum should be 6");
+    sumTwoSmallestNumbers([3, 87, 45, 12, 7]); // 10 , "Sum should be 10");
+    sumTwoSmallestNumbers([23, 71, 33, 82, 1]); // 24 , "Sum should be 24");
+    sumTwoSmallestNumbers([52, 76, 14, 12, 4]); // 16 , "Sum should be 16");
+
+    // challenge 2 pulled from the bonus exercises sent by David, Exercise 13  ----  https://java.codeup.com/extra-exercises/javascript/arrays/
+
+    // Exercise 13. Write a function named zip() that takes in two arrays with the same number of elements
+    // Zip returns a new array of arrays where each element is an array of the two elements at the same index
+    // Example: zip([1, 2, 3], [4, 5, 6]) returns [[1, 4], [2, 5], [3, 6])
+    // Example: zip(["a", "b", "c"], ["x", "y", "z"]) returns [["a", "x"], ["b", "y"], ["c", "z"]]
+
+// challenge 3 - pulled from codewars --- https://www.codewars.com/kata/54ba84be607a92aa900000f1/train/javascript
+
+</script>
+
+</body>
+</html>
