@@ -7,52 +7,97 @@
     <title>Dice Roller</title>
 </head>
 <body>
+<br>
+<div class="container main-page">
+<h1 id="main-header">ROLL SOME DICE</h1>
+<button id='button'>ROLL THE DICE</button>
+
+<br>
 <div class="containerGrid">
-<div class="container box1"></div>
-<div class="container box2"></div>
-<div class="container box3"></div>
-<div class="container box4"></div>
-<div class="container box5"></div>
-<div class="container box6"></div>
-<div class="container box7"></div>
-<div class="container box8"></div>
-<div class="container box9"></div>
-<div class="container box10"></div>
-<div class="container box11"></div>
-<div class="container box12"></div>
-<div class="container box13"></div>
-<div class="container box14"></div>
-<div class="container box15"></div>
-<div class="container box16"></div>
+    <div class="container box1"></div>
+    <div class="container box2"></div>
+    <div class="container box3"></div>
+    <div class="container box4"></div>
+    <div class="container box5"></div>
+    <div class="container box6"></div>
+    <div class="container box7"></div>
+    <div class="container box8"></div>
+    <div class="container box9"></div>
+    <div class="container box10"></div>
+    <div class="container box11"></div>
+    <div class="container box12"></div>
+    <div class="container box13"></div>
+    <div class="container box14"></div>
+    <div class="container box15"></div>
+    <div class="container box16"></div>
 </div>
 <br>
+
+<!--//roll the dice pick a dice to roll-->
+
 <form class="rollDieFunction" method="post">
-<label for="mySelect">Choose A Die To Roll</label>
-<select id="mySelect" onclick="myFunction()">
-    <option class="rollDie" value="1">Six Sided Die</option>
-    <option class="tetrahedron" value="2">Tetrahedron</option>
-    <option class="TwentySidedDie" value="3">Twenty Sided Die</option>
-    <option class="twoDice" value="4">Two Six Sided Dice</option>
-</select>
-<!--    <button type="button" onclick="myFunction()">Display index</button>-->
-<br>
-
-<br>
-<label for="mySelect2">How Many Times Do You Want To Roll?</label>
-<select id="mySelect2">
-    <option class="numberOfRolls" value="1">1</option>
-    <option class="numberOfRolls" value="2">2</option>
-    <option class="numberOfRolls" value="3">3</option>
-    <option class="numberOfRolls" value="4">4</option>
-    <option class="numberOfRolls" value="5">5</option>
-    <option class="numberOfRolls" value="6">6</option>
-</select>
-    <button type="button" onclick="myFunction2()">Roll The Dice</button>
+    <label for="mySelect">CHOOSE A DIE TO ROLL</label>
     <br>
+    <select id="mySelect" onclick="">
+        <option class="rollDie" value="6">Six Sided Die</option>
+        <option class="tetrahedron" value="4">Tetrahedron</option>
+        <option class="TwentySidedDie" value="20">Twenty Sided Die</option>
+        <option class="twoDice" value="12">Two Six Sided Dice</option>
+    </select>
+
     <br>
 
+    <label for="mySelect2">HOW MANY TIMES DO YOU WANT TO ROLL?</label>
+    <br>
+    <select id="mySelect2">
+        <option class="numberOfRolls" value="1">1</option>
+        <option class="numberOfRolls" value="2">2</option>
+        <option class="numberOfRolls" value="3">3</option>
+        <option class="numberOfRolls" value="4">4</option>
+        <option class="numberOfRolls" value="5">5</option>
+        <option class="numberOfRolls" value="6">6</option>
+    </select>
+
+    <br>
 </form>
+</div>
+<br>
+<br>
+<script>
+    "use strict";
+    (function () {
 
+
+        "use strict";
+        var mainHeader = document.getElementById("main-header");
+
+        var listener = function (event) {
+            mainHeader.innerText = "YOU ROLLED: " + listOfRollsFromDieFunc();
+        };
+        document.getElementById('button').addEventListener('click', listener, false);
+
+
+        var numberOfRolls = document.getElementById('mySelect2');
+        // console.log(numberOfRolls);
+
+        var diceFunction = document.getElementById('mySelect');
+        // console.log(diceFunction);
+
+        function listOfRollsFromDieFunc() {
+            var dieChosen = diceFunction.value;
+            console.log(dieChosen);
+            var rollAmount = numberOfRolls.value;
+            console.log(rollAmount);
+            var diceArray = [];
+            for (var i = 0; i < rollAmount ; i++) {
+                diceArray.push(Math.floor(Math.random() * dieChosen) + 1);
+            }
+            console.log(diceArray);
+            return diceArray
+        }
+
+    })();
+</script>
 
 
 </body>
