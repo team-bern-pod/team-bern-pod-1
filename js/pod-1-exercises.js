@@ -6,28 +6,28 @@
 //
 // Given:
 //
-var bugs = ["mosquito", "ant", "scorpion", "ant", "ant", "mosquito", "typo", "reference error", "type error"];
+// var bugs = ["mosquito", "ant", "scorpion", "ant", "ant", "mosquito", "typo", "reference error", "type error"];
 //
-function removeAll(array, value){
-    return array.filter(function(el){
-        return el !== value
-    });
-}
+// function removeAll(array, value){
+//     return array.filter(function(el){
+//         return el !== value
+//     });
+// }
 
 // removeAll(bugs, "ant");
 // should return ["mosquito", "scorpion", "mosquito", "typo", "reference error", "type error"]
 
-console.log(removeAll(bugs, "ant"));
+// console.log(removeAll(bugs, "ant"));
 
 // removeAll(bugs, "mosquito");
 // should return ["ant", "scorpion", "ant", "ant", "typo", "reference error", "type error"]
 
-console.log(removeAll(bugs, "mosquito"));
+// console.log(removeAll(bugs, "mosquito"));
 
 // removeAll(bugs, "roach");
 // should return the original array b/c "roach" has no occurrences.
 
-console.log(removeAll(bugs, "roach"));
+// console.log(removeAll(bugs, "roach"));
 
 // ---------------------------------------------------------------------------------------------
 
@@ -45,39 +45,39 @@ console.log(removeAll(bugs, "roach"));
 // howManyTimes("qudusayo") ➞ 123
 // Notes: Ignore spaces.
 
-var testWord = function splitToArray(x){ // Will take a string and split into individual characters
-    return Array.from(x);
-};
-
-console.log(testWord("hello"));
+// var testWord = function splitToArray(x){ // Will take a string and split into individual characters
+//     return Array.from(x);
+// };
+//
+// console.log(testWord("hello"));
 //========================================
 
-var numericalString = function letterValue(testWord){ // Will convert individual characters to a numerical value
-
-    var alphaReference = {
-        a: 1, b: 2, c: 3, d: 4, e: 5, f: 6, g: 7,
-        h: 8, i: 9, j: 10, k: 11, l: 12, m: 13, n: 14, o: 15, p: 16,
-        q: 17, r: 18, s: 19, t: 20, u: 21, v: 22,
-        w: 23, x: 24, y: 25, z: 26
-    };
-
-    if(testWord.length === 1)
-        return alphaReference[testWord] || ' ';
-    else{
-        return testWord.split('').map(letterValue);
-    }
-};
-
-console.log(numericalString("hello"));
+// var numericalString = function letterValue(testWord){ // Will convert individual characters to a numerical value
+//
+//     var alphaReference = {
+//         a: 1, b: 2, c: 3, d: 4, e: 5, f: 6, g: 7,
+//         h: 8, i: 9, j: 10, k: 11, l: 12, m: 13, n: 14, o: 15, p: 16,
+//         q: 17, r: 18, s: 19, t: 20, u: 21, v: 22,
+//         w: 23, x: 24, y: 25, z: 26
+//     };
+//
+//     if(testWord.length === 1)
+//         return alphaReference[testWord] || ' ';
+//     else{
+//         return testWord.split('').map(letterValue);
+//     }
+// };
+//
+// console.log(numericalString("hello"));
 //========================================
 
-function totalValue(x){
-    return x.reduce(function(sum, value) {
-        return sum + value;
-    });
-}
-
-console.log(totalValue(numericalString("hello")));
+// function totalValue(x){
+//     return x.reduce(function(sum, value) {
+//         return sum + value;
+//     });
+// }
+//
+// console.log(totalValue(numericalString("hello")));
 // ---------------------------------------------------------------------------------------------
 
 // Source Link: https://edabit.com/challenge/jRSST87NjECBzbwzL
@@ -164,7 +164,7 @@ var groceries = [
 }
 ];
 
-console.log("Thank you for shopping with us!\n\nYour cart is listed below: "
+console.log("Thank you for shopping with us!\n\nYour cart is listed below: " // Logs random cart upon page refresh
     + "\n" + "\n" + "Product: " + groceries[0].product + "\n" + "Quantity: " + groceries[0].quantity + "\n" + "Price (per unit): $" +  groceries[0].price.toFixed(2)
     + "\n" + "\n" + "Product: " + groceries[1].product + "\n" + "Quantity: " + groceries[1].quantity + "\n" + "Price (per unit): $" +  groceries[1].price.toFixed(2)
     + "\n" + "\n" + "Product: " + groceries[2].product + "\n" + "Quantity: " + groceries[2].quantity + "\n" + "Price (per unit): $" +  groceries[2].price.toFixed(2)
@@ -174,12 +174,9 @@ console.log("Thank you for shopping with us!\n\nYour cart is listed below: "
     + "\n" + "\n" + "Product: " + groceries[6].product + "\n" + "Quantity: " + groceries[6].quantity + "\n" + "Price (per unit): $" +  groceries[6].price.toFixed(2)
 );
 
-console.log("Your final bill is: $ "
-    + ((groceries[0].quantity * groceries[0].price)
-    + (groceries[1].quantity * groceries[1].price)
-    + (groceries[2].quantity * groceries[2].price)
-    + (groceries[3].quantity * groceries[3].price)
-    + (groceries[4].quantity * groceries[4].price)
-    + (groceries[5].quantity * groceries[5].price)
-    + (groceries[6].quantity * groceries[6].price)).toFixed(2)
-);
+var total = 0;
+groceries.forEach(function(grocery){
+    total = total + (grocery.quantity * grocery.price);
+});
+
+console.log("Your final bill is: $" + total.toFixed(2));
