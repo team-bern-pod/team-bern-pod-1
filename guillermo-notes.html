@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    // challenge 1 pulled from Codewars -- https://www.codewars.com/kata/558fc85d8fd1938afb000014/train/javascript
+
+//     function sumTwoSmallestNumbers(numbers) {
+//         var sortedArray = [];
+//         var sum = 0;
+//         sortedArray = numbers.sort(function(a,b){return a-b});
+//         sum = sortedArray[0] + sortedArray[1];
+//         return console.log(sum);
+//     }
+//
+// //    calling the function and passing arguments for testing.
+//
+//     sumTwoSmallestNumbers([5, 8, 12, 19, 22]); //, 13 , "Sum should be 13");
+//     sumTwoSmallestNumbers([15, 28, 4, 2, 43]); // 6 , "Sum should be 6");
+//     sumTwoSmallestNumbers([3, 87, 45, 12, 7]); // 10 , "Sum should be 10");
+//     sumTwoSmallestNumbers([23, 71, 33, 82, 1]); // 24 , "Sum should be 24");
+//     sumTwoSmallestNumbers([52, 76, 14, 12, 4]); // 16 , "Sum should be 16");
+
+    // challenge 2 pulled from the bonus exercises sent by David, Exercise 13  ----  https://java.codeup.com/extra-exercises/javascript/arrays/
+    // Zip returns a new array of arrays where each element is an array of the two elements at the same index
+    // Example: zip([1, 2, 3], [4, 5, 6]) returns [[1, 4], [2, 5], [3, 6])
+    // Example: zip(["a", "b", "c"], ["x", "y", "z"]) returns [["a", "x"], ["b", "y"], ["c", "z"]]
+
+    //    got similar solution from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Indexed_collections - section multi-dimensional arrays
+
+    // function zip(arr1, arr2) {
+    //     var arr3 = [];
+    //     // var arr3 = new Array(arr1.length);
+    //
+    //     if (arr1.length !== arr2.length) {
+    //         console.log("Sorry these arrays are not the same length.");
+    //     } else {
+    //         var j=0;
+    //         for (var i=0; i < arr1.length; i++) {
+    //             // arr3[i] = [arr1[i], arr2[j]];
+    //             arr3[i] = '[' + arr1[i] + ', ' + arr2[j] + ']';
+    //             j++;
+    //         }
+    //         console.log(arr3);
+    //     }
+    // }
+    //
+    // zip(['moe','larry','curly'], ['a','b','c','d']);
+    // zip(['moe','larry','curly'], ['a','b','c']);
+    // zip([1,2,3,4], ["a","b","c"]);
+    // zip([1,2,3,5], ["a","b","c","d"]);
+    // zip(["red","blue","green"],["banana","apple","orange"]);
+
+// challenge 3 - pulled from codewars --- https://www.codewars.com/kata/54ba84be607a92aa900000f1/train/javascript
+
+function isIsogram(str){
+    if (str === '') {
+        return true;
+    } else if (typeof str === 'number') {
+        return false;
+    } else {
+        var string2 = str.toLowerCase();
+        var arr = string2.split("");
+    }
+    var ctr = 0;
+    arr.forEach(function(letter) {
+        for (var i=0; i<string2.length; i++) {
+            if (letter === string2[i]) {
+                ctr++;
+            } else {
+                continue;
+            }
+        }
+    });
+    if (ctr === string2.length) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+console.log(isIsogram("Dermatoglyphics"));
+console.log(isIsogram("isogram"));
+console.log(isIsogram("aba"));
+console.log(isIsogram("moOse"));
+console.log(isIsogram("isIsogram"));
+console.log(isIsogram(""));
+
+</script>
+
+</body>
+</html>
