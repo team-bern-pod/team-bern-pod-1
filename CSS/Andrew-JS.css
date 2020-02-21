@@ -1,0 +1,117 @@
+.main-page{
+    font-family: Helvetica, sans-serif;
+    color: ghostwhite;
+    margin: 0 -10px ;
+    text-shadow: black 2px 2px 5px;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    background: grey;
+    flex-direction: column;
+    height: 500px;
+
+}
+
+
+.containerGrid {
+
+    display: grid;
+    border: 2px lightgray solid;
+    box-shadow: black 2px 2px 4px;
+    height: 200px;
+    width: 200px;
+    grid-template-areas:
+            "box1 box2 box3 box4"
+            "box5 box6 box7 box8"
+            "box9 box10 box11 box12"
+            "box13 box15 box14 box16";
+}
+
+.rollDieFunction{
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.box1{
+    grid-area: box1;
+    background: darkblue;
+}
+
+.box2{
+    grid-area: box2;
+    background: blue;
+}
+
+.box3{
+    grid-area: box3;
+    background: royalblue;
+}
+
+.box4{
+    grid-area: box4;
+    background: dodgerblue;
+}
+
+.box5{
+    grid-area: box5;
+    background: darkgreen;
+}
+
+.box6{
+    grid-area: box6;
+    background: green;
+}
+
+.box7{
+    grid-area: box7;
+    background: yellowgreen;
+}
+
+.box8{
+    grid-area: box8;
+    background: greenyellow;
+}
+
+.box9{
+    grid-area: box9;
+    background: orangered;
+}
+
+.box10{
+    grid-area: box10;
+    background: darkorange;
+}
+
+.box11{
+    grid-area: box11;
+    background: goldenrod;
+}
+
+.box12{
+    grid-area: box12;
+    background: yellow;
+}
+
+.box13{
+    grid-area: box13;
+    background: darkred;
+
+}
+
+.box14{
+    grid-area: box14;
+    background: red;
+}
+
+.box15{
+    grid-area: box15;
+    background:  firebrick;
+}
+
+.box16{
+    grid-area: box16;
+    background: salmon;
+}
