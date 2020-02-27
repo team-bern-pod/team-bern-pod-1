@@ -1,74 +1,47 @@
 //
-// console.log(randomIntBetween());
-// function twoDice(input) {
-//     return (Math.floor(Math.random() * 6) + 1) + (Math.floor(Math.random() * 6) + 1);
-// }
+// "use strict";
+// (function () {
 //
-// // console.log(twoDice());
-// function twentySidedDice(input) {
-//     return (Math.floor(Math.random() * 20) + 1);
-// }
+//     var mainHeader = document.getElementById("main-header");
 //
-// console.log(twentySidedDice());
-// function twelveSidedDie(input) {
-//     return (Math.floor(Math.random() * 12) + 1);
-// }
-//
-// function rollDie(n) {
-//     return (Math.floor(Math.random() * 6) + 1);
-// }
-//
-// console.log(rollDie());
-//
-// function tetrahedron(input) {
-//     return (Math.floor(Math.random() * 4) + 1);
-// }
-//
-// console.log(roller());
-// Make a function called listOfRollsFromDieFunc(numberOfRolls, diceFunction)
+//     var listener = function (event) {
+//         mainHeader.innerText = "YOU ROLLED: " + listOfRollsFromDieFunc();
+//     };
+//     document.getElementById('button').addEventListener('click', listener, false);
 //
 //
-// var numberOfRolls = document.getElementById("numberOfRolls").selectedIndex;
+//     var numberOfRolls = document.getElementById('mySelect2');
+//     // console.log(numberOfRolls);
 //
-// var diceToRoll = document.getElementById("diceToRoll").options;
-// alert("Index: " + numberOfRolls[diceToRoll].index + " is " + numberOfRolls[diceToRoll].text);
-// function myFunction(x) {
-//     var x = document.getElementById("mySelect").selectedIndex = '';
-//     var y = document.getElementById("mySelect").options;
-//     console.log(y, x);
-//     if (x[y] === 0) {
-//         var x = function rollDie(n) {
-//             return (Math.floor(Math.random() * x) + 1);
-//         };
-//     } else if (x[y] === 1){
-//         var x = function tetrahedron(input) {
-//             return (Math.floor(Math.random() * 4) + 1);
+//     var diceFunction = document.getElementById('mySelect');
+//     // console.log(diceFunction);
+//
+//     function listOfRollsFromDieFunc() {
+//         var dieChosen = diceFunction.value;
+//         console.log(dieChosen);
+//         var rollAmount = numberOfRolls.value;
+//         console.log(rollAmount);
+//         var diceArray = [];
+//         for (var i = 0; i < rollAmount ; i++) {
+//             diceArray.push(Math.floor(Math.random() * dieChosen) + 1);
 //         }
-//     }else if (x[y] === 2){
-//         var x = function twentySidedDice(input) {
-//             return (Math.floor(Math.random() * 20) + 1);
-//         }
-//     }else if (x[y] === 3){
-//         var x = function twoDice(input) {
-//             return (Math.floor(Math.random() * 6) + 1) + (Math.floor(Math.random() * 6) + 1);
-//         }
+//         console.log(diceArray);
+//         return diceArray
 //     }
-// }
 //
-// function myFunction2() {
-//     var x = document.getElementById("mySelect2").selectedIndex;
-//     var y = document.getElementById("mySelect2").options;
-//     alert(y[x].text);
-// }
-//
-// function listOfRollsFromDieFunc(numberOfRolls, diceFunction) {
-//     var diceArray = [];
-//     for (var i = 0; i < numberOfRolls; i++) {
-//         diceArray.push(diceFunction());
-//     }
-//     console.log(diceArray);
-//     return diceArray
-// }
-// console.log(listOfRollsFromDieFunc(x, myFunction2));
-//
-//
+// })();
+
+
+function matchHouses(step) {
+    if (step > 0 ){
+        return (step*5)+1
+
+    }else {
+        return 0
+    }
+}
+
+
+function sweetestIcecream(arr) {
+    return arr.reduce()
+}
