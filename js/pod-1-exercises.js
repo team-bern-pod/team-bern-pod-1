@@ -194,15 +194,15 @@
 
 // alternatingCaps("OMG this website is awesome!") ➞ "OmG tHiS wEbSiTe Is AwEsOmE!"
 
-function alternateCaps(x) {
-    var chars = x.toLowerCase().split("");
-    for (var i = 0; i < chars.length; i += 2) {
-        chars[i] = chars[i].toUpperCase();
-    }
-    return chars.join("");
-}
-
-console.log(alternateCaps("You don't know how to JS!"));
+// function alternateCaps(x) {
+//     var chars = x.toLowerCase().split("");
+//     for (var i = 0; i < chars.length; i += 2) {
+//         chars[i] = chars[i].toUpperCase();
+//     }
+//     return chars.join("");
+// }
+//
+// console.log(alternateCaps("You don't know how to JS!"));
 // ---------------------------------------------------------------------------------------------
 
 // Source Link: https://edabit.com/challenge/ceEEZioNmxuMJFMxi
@@ -232,37 +232,140 @@ console.log(alternateCaps("You don't know how to JS!"));
 // validateCard(1234567890123452) ➞ true
 // Same as above, but check digit checks out.
 
-var testCase = "1234567890123456";
-
-var lastDigit = function removeLastDigit(testCase) { // Will take in a string of numbers and isolate the last digit
-    return parseFloat(testCase.slice(testCase.length - 1, testCase.length));
-};
-console.log(lastDigit(testCase));
-// //-----------------------------------------------------------------
-var remainderString = function restOfString(x) { // Will take in a string of numbers and return every number but the last digit
-    return parseFloat(testCase.slice(0, -1));
-};
-console.log(remainderString(testCase));
-// //-----------------------------------------------------------------
-var reversedRemainder = function reverseRemain(remainderString){ // Will reverse the remainder string
-    var reversed = "";
-    for (var i = remainderString.length - 1; i >= 0; i--){
-        reversed = parseFloat((reversed + remainderString[i]));
-    }
-    return reversed;
-};
-console.log(reversedRemainder(testCase));
-// //-----------------------------------------------------------------
-var reversedArray = function stringToArray(reversedRemainder){ // Will convert the reversed remainder string into an array
-    return reversedRemainder.split("");
-};
-console.log(reversedArray(testCase));
-// //-----------------------------------------------------------------
-function doubleOddPositions(reversedArray) {
-    for (var i = 0; i < reversedArray.length; ++i)
-        return reversedArray[i] = i % 2 !== 0 ? reversedArray[i] * 2 : reversedArray[i] * 3;
-}
-console.log(doubleOddPositions(reversedArray));
+// var testCase = "1234567890123456";
+//
+// var lastDigit = function removeLastDigit(testCase) { // Will take in a string of numbers and isolate the last digit
+//     return parseFloat(testCase.slice(testCase.length - 1, testCase.length));
+// };
+// console.log(lastDigit(testCase));
+// // //-----------------------------------------------------------------
+// var remainderString = function restOfString(x) { // Will take in a string of numbers and return every number but the last digit
+//     return parseFloat(testCase.slice(0, -1));
+// };
+// console.log(remainderString(testCase));
+// // //-----------------------------------------------------------------
+// var reversedRemainder = function reverseRemain(remainderString){ // Will reverse the remainder string
+//     var reversed = "";
+//     for (var i = remainderString.length - 1; i >= 0; i--){
+//         reversed = parseFloat((reversed + remainderString[i]));
+//     }
+//     return reversed;
+// };
+// console.log(reversedRemainder(testCase));
+// // //-----------------------------------------------------------------
+// var reversedArray = function stringToArray(reversedRemainder){ // Will convert the reversed remainder string into an array
+//     return reversedRemainder.split("");
+// };
+// console.log(reversedArray(testCase));
+// // //-----------------------------------------------------------------
+// function doubleOddPositions(reversedArray) {
+//     for (var i = 0; i < reversedArray.length; ++i)
+//         return reversedArray[i] = i % 2 !== 0 ? reversedArray[i] * 2 : reversedArray[i] * 3;
+// }
+// console.log(doubleOddPositions(reversedArray));
 // ---------------------------------------------------------------------------------------------
 
 // Superhero Database (Bonus Exercise)...see side directory
+
+// ---------------------------------------------------------------------------------------------
+
+// Source Link: https://www.w3resource.com/jquery-exercises/jquery-core-exercises.php
+
+// 9 jQuery Core Exercises
+
+// 1. Find all h1 elements that are children of a div element and apply a background to them.
+
+// Sample Data :
+
+// <body>
+// <h1>abc</h1>
+// <div>
+// <h1>div-1</h1>
+// <h1>div-2</h1>
+// </div>
+// <h1>xyz</h1>
+// </body>
+
+$('div').children().css("background-color", "blue");
+
+// 2. Set the background color of a page to red.
+
+$('body').css("background-color", "red");
+
+// 3. Hide all the input elements within a form.
+
+// Sample Data :
+
+// <form name='demo_form'>
+//     First name: <input type="text" name="fname"><br>
+//     Last name: <input type="text" name="lname"><br>
+//     <input type="submit" value="Submit">
+// </form>
+
+$('input').css("display", "none");
+
+// 4. Find the specific option tag text value of a selected option (e.g. expected output = "Option-2")
+
+// Sample Data :
+
+// <select id="myselect">
+//     <option value="1">Option-1</option>
+//     <option value="2">Option-2</option>
+//     <option value="3">Option-3</option>
+// </select>
+
+var value = $("#myselect option[value=2]").text();
+$('#ex_4').append("<p>" + "Output: " + value + "</p>");
+
+// 5. Check/uncheck a checkbox input or radio button.
+
+// Sample Data :
+
+// <form action="">
+//     <input type="radio" name="sex" value="male" checked>Male
+//     <br>
+//     <input type="radio" name="sex" value="female">Female
+// </form>
+
+$('input').prop("checked", true );
+
+// 6. Write jQuery code to append a div element (and all of its contents) dynamically to the body element.
+
+// Sample Data :
+
+// Insert the following within HTML <body> tag :
+// <div><h1>JQuery Core</h1></div>
+
+$('body').append("<div><h1>JQuery Core</h1></div>");
+
+// 7. Write a jQuery Code to get a single element from a selection (e.g. Sample Output : "Mongodb Tutorial")
+
+// Sample Data :
+
+// <ui>
+// <li>Html Tutorial</li>
+// <li>Mongodb Tutorial</li>
+// <li>Python Tutorial</li>
+
+var targetWholeList = $('li');
+var selectedItem = targetWholeList[1];
+var toHTML = selectedItem.innerHTML;
+//
+$('li').last().append("<li>" + "Output: " + toHTML + "</li>");
+
+// 8. Write jQuery Code to add a <b> tag at the beginning of the list item, containing the index of the list item.
+
+$('li').each(function(index, element) {
+    $(element).prepend('' + index + ': ');
+});
+
+// 9. Write jQuery Code to change the hyperlink and the text of a existing link. Change the hyperlink to -> www.w3resource.com/mysql/mysql-tutorials.php
+// text -> MySQL Tutorial
+
+// Sample Data :
+
+// <a href="www.w3resource.com/sqlite/" id='tut'>SQLite Tutorial</a>
+
+$("a").attr("href", "www.w3resource.com/mysql/mysql-tutorials.php");
+
+$("a").text("MySQL Tutorial");
