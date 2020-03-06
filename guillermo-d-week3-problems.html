@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<!-- Problem 1 - from Edabit URL: https://edabit.com/challenge/i6YqzHcSiPiEQKjeX -->
+<!--Given an array of scrabble tiles, create a function that outputs the maximum possible score a player can achieve by summing up the total number of points for all the tiles in their hand. Each hand contains 7 scrabble tiles.-->
+
+
+<!--Problem 2 - from Edabit URL:  https://edabit.com/challenge/RPBqWjEa7iyo9p54F-->
+<!--Create a function that counts the number of syllables a word has. Each syllable is separated with a dash -.-->
+
+<!--Problem 3 - from Edabit URL: https://edabit.com/challenge/jJS3yokQmu4etN5qs-->
+<!--Write a function that returns true if a hash contains the specified key, and false otherwise.-->
+
+<script>
+"use strict";
+// Problem 1****************************************************
+
+var letters = ([
+    { tile: "N", score: 1 },
+    { tile: "K", score: 5 },
+    { tile: "Z", score: 10 },
+    { tile: "X", score: 8 },
+    { tile: "D", score: 2 },
+    { tile: "A", score: 1 },
+    { tile: "E", score: 1 }
+]);
+
+function maximumScore(tileHand) {
+    var sum = 0;
+    tileHand.forEach(function(tile) {
+        sum = sum + tile.score;
+    });
+    return console.log(sum);
+}
+
+maximumScore(letters);
+
+// Problem 2****************************************************
+
+function numberSyllables(word) {
+var ctr = 1;
+    for(var i=0; i<word.length; i++) {
+        if (word[i] === '-') {
+            ctr++;
+        }
+    }
+    return console.log(ctr);
+}
+
+numberSyllables("buf-fet");
+numberSyllables("on-o-mat-o-poe-ia")
+
+// Problem 3*************************************************
+
+function hasKey(obj, key) {
+    var result = false;
+    for (var i = 0; i < Object.keys(obj).length; i++) {
+        if (Object.keys(obj)[i] == key) {
+            result = true;
+        }
+    }
+    return console.log(result, key, Object.keys(obj));
+}
+
+hasKey({ a: 44, b: 45, c: 46 }, "d");
+hasKey({ craves: true, midnight: true, snack: true }, "morning");
+hasKey({ pot: 1, tot: 2, not: 3 }, "not");
+
+
+</script>
+
+</body>
+</html>
